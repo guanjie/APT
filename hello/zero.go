@@ -9,5 +9,5 @@ func zero(xPtr *int) {
 func main() {
     x := 5
     zero(&x)
-    fmt.Println("x now is ", x)
+    fmt.Println("x now is %v", x)
 }

@@ -27,5 +27,4 @@ func main() {
     r2 := rand.New(s2)
 
     fmt.Println("this is from s2:", r2.Intn(100))
-
 }
