@@ -1,3 +1,5 @@
+// Changing the value of a val directly through its address
+
 package main
 
 import "fmt"

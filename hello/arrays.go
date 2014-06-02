@@ -1,4 +1,4 @@
-//Arrays.go file for learning purpose.
+//Arrays.go file for learning purpose. Check.
 package main
 
 import (
