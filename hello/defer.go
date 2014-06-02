@@ -11,7 +11,7 @@ func main() {
     // f is the *os.File that we defer close.
     // QUESTION can not pass in /tmp/tmp.txt, will not execute
     f := createFile("tmp.txt")
-    // closeFile the *os.File f
+    // closeFile the *os.File f, right after creating file. Can be used as finally
     defer closeFile(f)
     writeFile(f)
 }
