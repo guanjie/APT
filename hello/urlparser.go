@@ -7,6 +7,8 @@ import (
     "net/url"
 )
 
+var p = fmt.Println
+
 func main() {
     s := "postgres://user:pass@host.com:5432/path?k=v#f"
 
@@ -15,7 +17,6 @@ func main() {
         panic(err)
     }
 
-    p := fmt.Println
     p(u)
 
     p(u.Scheme)
