@@ -6,6 +6,8 @@ import (
     "fmt"
 )
 
+var p = fmt.Println
+
 func zeroval(ival int) {
 
     ival = 0
@@ -17,7 +19,6 @@ func zeroptr(iptr *int) {
 }
 
 func main() {
-    p := fmt.Println
     i := 100
     p("Initial value is: ", i)
 

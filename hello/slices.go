@@ -18,7 +18,6 @@ func main() {
     s = append(s, "fourth")
     s = append(s, "5", "6")
 
-    // TRICK, copy a slice needs declaration and the copy(c,s) function
     c := make([]string, len(s))
     copy(c, s)
     s[0] = "changed"
