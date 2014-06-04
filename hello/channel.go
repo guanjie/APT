@@ -1,3 +1,5 @@
+// channel.go file, for learning purpose
+
 package main
 
 import (
@@ -5,31 +7,29 @@ import (
     "time"
 )
 
-func pinger(c chan<- string) {
+var p = fmt.Println
+
+func ping(c chan string) {
+
     for i := 0; ; i++ {
         c <- "ping"
-    }
-}
-
-func ponger(c chan<- string) {
-    for i := 0; ; i++ {
-        c <- "pong"
-    }
-}
-
-func printer(c <-chan string) {
-    for {
-        msg := <-c
-        fmt.Println(msg)
-        time.Sleep(time.Second * 1)
+        p("this is the nth ping:", i)
     }
 }
 
 func main() {
-    var c chan string = make(chan string)
-    go pinger(c)
-    go ponger(c)
-    go printer(c)
+
+    c := make(chan string)
+    // ping is a for loop open all the time
+    go ping(c)
+
+    go func() {
+        for {
+            time.Sleep(time.Millisecond * 100)
+            msg := <-c
+            p(msg)
+        }
+    }()
 
     var input string
     fmt.Scanln(&input)
