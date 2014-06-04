@@ -1,23 +1,33 @@
+// goroutine.go file for learning purpose
+
 package main
 
 import (
     "fmt"
-    "math/rand"
     "time"
 )
 
-func f(n int) {
-    for i := 0; i < 10; i++ {
-        fmt.Println(n, ":", i)
-        amt := time.Duration(rand.Intn(250))
-        time.Sleep(time.Millisecond * amt)
+var p = fmt.Println
+
+func f(from string) {
+    for i := 0; i < 8; i++ {
+        p(from, ":", i)
+        time.Sleep(time.Millisecond * 100)
     }
 }
 
 func main() {
-    for i := 0; i < 10; i++ {
-        go f(i)
-    }
+
+    // TRICK, inside for loop operates every goroutine.
+    go f("direct")
+
+    go f("synchronous")
+
+    go f("come on, another one")
+
+    go f("the fourth one, make description longer")
+
     var input string
     fmt.Scanln(&input)
+
 }
