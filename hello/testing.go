@@ -3,7 +3,11 @@ package main
 
 import (
     "fmt"
+
+    "os"
 )
+
+var p = fmt.Println
 
 func vals() (int, int) {
     return 3, 7

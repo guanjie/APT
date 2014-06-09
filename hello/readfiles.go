@@ -17,6 +17,7 @@ func check(err error) {
 }
 
 func main() {
+    // TRICK, to read a file we need to use ioutil.ReadFile("pwd")
     data, err := ioutil.ReadFile("temp/testing.txt")
     check(err)
     p(string(data))
@@ -26,5 +27,10 @@ func main() {
     check(err)
     // File reading could be further checked
     p(f)
+    p("=================\n")
+
+    data_testing, err := ioutil.ReadFile("/users/guanjiehe/desktop/testing.txt")
+    check(err)
+    p(string(data_testing))
 
 }
