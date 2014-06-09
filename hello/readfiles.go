@@ -4,6 +4,8 @@ package main
 
 import (
     "fmt"
+    "io/ioutil"
+    "os"
 )
 
 var p = fmt.Println
@@ -15,5 +17,14 @@ func check(err error) {
 }
 
 func main() {
-    p("Testing Testing.")
+    data, err := ioutil.ReadFile("temp/testing.txt")
+    check(err)
+    p(string(data))
+    p("=================\n")
+
+    f, err := os.Open("temp/testing.txt")
+    check(err)
+    // File reading could be further checked
+    p(f)
+
 }
