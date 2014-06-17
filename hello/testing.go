@@ -3,7 +3,6 @@ package main
 
 import (
     "fmt"
-
     "os"
 )
 
@@ -19,5 +18,4 @@ func main() {
     for _, val := range strs {
         fmt.Println("val is:", val)
     }
-
 }
