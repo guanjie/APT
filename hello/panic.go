@@ -3,15 +3,15 @@
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 func main() {
 
-    panic("There is a problem")
+	panic("There is a problem")
 
-    _, err := fmt.Println("Print a line in here.")
-    if err != nil {
-        panic(err)
-    }
+	_, err := fmt.Println("Print a line in here.")
+	if err != nil {
+		panic(err)
+	}
 }
