@@ -35,11 +35,11 @@ func main() {
 		Layout: "layout",
 	}))
 
-	m.Get("/", ShowPage)
+	m.Get("/", ShowBooks)
 	m.Run()
 }
 
-func ShowPage(ren render.Render, r *http.Request, db *sql.DB) {
+func ShowBooks(ren render.Render, r *http.Request, db *sql.DB) {
 	rows, err := db.Query("SELECT title, author, description FROM books")
 	PanicIf(err)
 	defer rows.Close()
