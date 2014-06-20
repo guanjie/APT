@@ -35,22 +35,23 @@ func main() {
 		Layout: "layout",
 	}))
 
-	m.Get("/", func(ren render.Render, r *http.Request, db *sql.DB) {
-		rows, err := db.Query("SELECT title, author, description FROM books")
-		PanicIf(err)
-		defer rows.Close()
-
-		books := []Book{}
-		for rows.Next() {
-			b := Book{}
-			err := rows.Scan(&b.Title, &b.Author, &b.Description)
-			PanicIf(err)
-			books = append(books, b)
-		}
-
-		// This way our template has all our assets in our books
-		ren.HTML(200, "books", books)
-	})
-
+	m.Get("/", ShowPage)
 	m.Run()
+}
+
+func ShowPage(ren render.Render, r *http.Request, db *sql.DB) {
+	rows, err := db.Query("SELECT title, author, description FROM books")
+	PanicIf(err)
+	defer rows.Close()
+
+	books := []Book{}
+	for rows.Next() {
+		b := Book{}
+		err := rows.Scan(&b.Title, &b.Author, &b.Description)
+		PanicIf(err)
+		books = append(books, b)
+	}
+
+	// This way our template has all our assets in our books
+	ren.HTML(200, "books", books)
 }
