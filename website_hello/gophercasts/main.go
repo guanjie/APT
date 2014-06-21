@@ -44,6 +44,7 @@ func ShowBooks(ren render.Render, r *http.Request, db *sql.DB) {
 	PanicIf(err)
 	defer rows.Close()
 
+	// Get the books slice
 	books := []Book{}
 	for rows.Next() {
 		b := Book{}
@@ -52,6 +53,6 @@ func ShowBooks(ren render.Render, r *http.Request, db *sql.DB) {
 		books = append(books, b)
 	}
 
-	// This way our template has all our assets in our books
+	// Put books slice into the books template
 	ren.HTML(200, "books", books)
 }
