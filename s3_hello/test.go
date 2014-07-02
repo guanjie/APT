@@ -10,6 +10,7 @@ import (
 func main() {
 
 	// Set up s3 connection
+	// For security reason I have left the keys blank as default.
 	auth := aws.Auth{
 		AccessKey: "",
 		SecretKey: "",
