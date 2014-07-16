@@ -14,6 +14,5 @@ func main() {
 
 	fmt.Println(resp)
 	fmt.Println()
-	fmt.Println(os.Getenv("MONGO_URL"))
 
 }
