@@ -9,7 +9,7 @@ import (
 )
 
 type Wish struct {
-	Name        string `form: "name"`
+	Name        string `form:"name"`
 	Description string `form:"description"`
 }
 
@@ -20,10 +20,11 @@ func DB() martini.Handler {
 	}
 
 	return func(c martini.Context) {
-		// XXX session clone why?
+		// XXX session clone why? Every time call the handler we clone the mongosession.
 		s := mongoSession.Clone()
 		c.Map(s.DB("advent"))
 		defer s.Close()
+		// XXX c.Next() is to ensure the context is called after other handlers.
 		c.Next()
 	}
 }
@@ -48,6 +49,7 @@ func main() {
 		r.HTML(200, "list", GetAll(db))
 	})
 
+	// binding.Form(interface{}) can fetch and retrieve the Wish type objects. The wish object can be used directly then.
 	m.Post("/wishes", binding.Form(Wish{}), func(wish Wish, r render.Render, db *mgo.Database) {
 		db.C("wishes").Insert(wish)
 		r.HTML(200, "list", GetAll(db))
