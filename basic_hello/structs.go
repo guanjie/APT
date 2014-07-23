@@ -3,29 +3,29 @@
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 type person struct {
-    name string
-    age  int
+	name string
+	age  int
 }
 
 func main() {
-    bob := person{"Bob", 39}
+	bob := person{"Bob", 39}
 
-    p := fmt.Println
-    p("Bob's age is:", bob.age)
-    p(person{"Eric", 28})
-    p(person{name: "humancool"})
-    p(person{name: "humancool", age: 28})
-    p(&person{name: "Sean", age: 50})
+	p := fmt.Println
+	p("Bob's age is:", bob.age)
+	p(person{"Eric", 28})
+	p(person{name: "humancool"})
+	p(person{name: "humancool", age: 28})
+	p(&person{name: "Sean", age: 50})
 
-    s := person{"Sean", 50}
-    sp := &s
+	s := person{"Sean", 50}
+	sp := &s
 
-    p(sp.name)
-    p(s.age)
-    sp.age = 100
-    p(s.age)
+	p(sp.name)
+	p(s.age)
+	sp.age = 100
+	p(s.age)
 }
