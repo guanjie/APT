@@ -11,6 +11,11 @@ import (
 
 type (
 	Todo struct {
+		Num   int    `bson:"num"`
+		Title string `bson:"title"`
+		Desc  string `bson:"Desc"`
+		Url   string `bson:"url"`
+
 		Task      string    `bson:"task"`
 		Created   time.Time `bson:"created"`
 		Updated   time.Time `bson:"updated"`
@@ -31,7 +36,7 @@ func main() {
 	}
 	defer mongoSession.Close()
 
-	collection := mongoSession.DB("advent").C("wishes")
+	collection := mongoSession.DB("advent").C("insert")
 	collection.Insert(todo1)
 	collection.Insert(todo2)
 
