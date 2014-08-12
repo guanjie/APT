@@ -47,6 +47,7 @@ func (w *Worker) Save() {
 		return
 	}
 
+	// useful way to save file from  temp file.
 	f, _ := ioutil.TempFile("", "logs_")
 	f.Write(w.buffer[0:w.position])
 	f.Close()
