@@ -1,0 +1,57 @@
+// main.go file of the concurrentgoproject.go file for learning purpose.
+
+package main
+
+import (
+	"fmt"
+	"net/http"
+	"time"
+)
+
+var urls = []string{
+	"http://www.baidu.com/",
+	// 	"http://golang.org/",
+	"http://matt.aimonetti.net",
+}
+
+type HttpResponse struct {
+	url      string
+	response *http.Response
+	err      error
+}
+
+func asyncHttpGets(urls []string) []*HttpResponse {
+	ch := make(chan *HttpResponse)
+	responses := []*HttpResponse{}
+
+	// Throw all &HttpResponse to the channel
+	for _, url := range urls {
+		go func(url string) {
+			fmt.Printf("Fetching %s \n", url)
+			resp, err := http.Get(url)
+			ch <- &HttpResponse{url, resp, err}
+		}(url)
+	}
+
+	// write in the responses which is bunch of []HttpResponse{}
+	for {
+		select {
+		case r := <-ch:
+			fmt.Printf("%s was fetched\n", r.url)
+			responses = append(responses, r)
+			if len(responses) == len(urls) {
+				return responses
+			}
+		case <-time.After(time.Millisecond * 50):
+			fmt.Print(".")
+		}
+	}
+	return responses
+}
+
+func main() {
+	results := asyncHttpGets(urls)
+	for _, result := range results {
+		fmt.Printf("%s status is: %s\n", result.url, result.response.Status)
+	}
+}
