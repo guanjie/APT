@@ -11,7 +11,8 @@ var p = fmt.Println
 func main() {
 
 	// TRICK, s := make([]string, 3), need to specify the length of the slices
-	s := make([]string, 4)
+	s := make([]string, 6)
+	// 	s := []string{}
 
 	s[0] = "First string"
 	s[1] = "Second string"
@@ -24,6 +25,8 @@ func main() {
 	p(s)
 	p(c)
 
-	l := s[0:4]
-	p(l)
+	for index, val := range s {
+		fmt.Println("value index is: ", index)
+		fmt.Println("value val is: ", val)
+	}
 }
