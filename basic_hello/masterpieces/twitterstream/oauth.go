@@ -1,5 +1,5 @@
 // oauth.go file for learning purpose.
-package main
+package twitterstream
 
 import (
 	"bufio"
