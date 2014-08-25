@@ -30,7 +30,9 @@ func main() {
 	s = append(s, "guanjie")
 	s = append(s, "harvey")
 	s = append(s, "niubi")
-
 	fmt.Println(s)
+
+	//test5 - Checking the number of chars in the string.
+	fmt.Println("The string char length is: " + strconv.Itoa(len("361a585dc0b297027311b4d0123c55e4")))
 
 }
