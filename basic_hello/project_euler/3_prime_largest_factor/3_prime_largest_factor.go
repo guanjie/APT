@@ -8,13 +8,13 @@ package main
 
 import (
 	"fmt"
-	"math"
+	// 	"math"
 )
 
 func main() {
 
-	for i := int(math.Sqrt(600851475143)); i > 1; i-- { // Check the squareroot of the number
-		// 	for i := 600851475143 / 2; i > 3; i-- { // This should be the complete way
+	// 	for i := int(math.Sqrt(600851475143)); i > 1; i-- { // Check the squareroot of the number
+	for i := 600851475143 / 2; i > 3; i-- { // This should be the complete way. This is done and with charm within 2 hrs. 6857 is the correct answer.
 		if 600851475143%i == 0 {
 			if IsPrime(i) {
 				fmt.Println(i)
