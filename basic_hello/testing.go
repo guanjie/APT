@@ -4,6 +4,7 @@ package main
 import (
 	"fmt"
 	"strconv"
+	"time"
 )
 
 var p = fmt.Println
@@ -44,4 +45,33 @@ func main() {
 	fmt.Println(len(letters))
 	fmt.Println(letters[len(letters)-1])
 
+	// test 7, testing on adding 2 variables.
+	v1 := 10
+	v2 := 20
+	v1, v2 = v1+v2, v1
+	fmt.Println(v1, v2)
+
+	// test 8, return value directly from the call
+	fmt.Println(IntVector{100, 2, 3}.Sum())
+
+	// test 9
+	go IsReady("tea", 3)
+	go IsReady("instant noodle", 5)
+
+	var input string
+	fmt.Scanln(&input)
+}
+
+type IntVector []int
+
+func (v IntVector) Sum() (s int) {
+	for _, x := range v { // blank identifier!
+		s += x
+	}
+	return
+}
+
+func IsReady(what string, secs int64) {
+	time.Sleep(time.Duration(secs) * time.Second)
+	fmt.Println(what, "is ready")
 }
