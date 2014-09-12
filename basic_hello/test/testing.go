@@ -4,7 +4,6 @@ package main
 import (
 	"fmt"
 	"strconv"
-	"time"
 )
 
 var p = fmt.Println
@@ -54,9 +53,9 @@ func main() {
 	// test 8, return value directly from the call
 	fmt.Println(IntVector{100, 2, 3}.Sum())
 
-	// test 9
-	go IsReady("tea", 3)
-	go IsReady("instant noodle", 5)
+	// test 9, create the channel
+	stream := pump()
+	suck(stream)
 
 	var input string
 	fmt.Scanln(&input)
@@ -71,7 +70,18 @@ func (v IntVector) Sum() (s int) {
 	return
 }
 
-func IsReady(what string, secs int64) {
-	time.Sleep(time.Duration(secs) * time.Second)
-	fmt.Println(what, "is ready")
+func pump() chan int { // pump 1 to the channel ch
+	ch := make(chan int)
+	go func() {
+		for i := 0; ; i++ {
+			ch <- i
+		}
+	}()
+	return ch
+}
+
+func suck(ch chan int) {
+	for {
+		fmt.Println(<-ch)
+	}
 }
