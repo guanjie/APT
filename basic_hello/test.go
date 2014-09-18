@@ -3,7 +3,10 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
+	"sort"
 	"strconv"
+	"strings"
 )
 
 var p = fmt.Println
@@ -53,12 +56,26 @@ func main() {
 	// test 8, return value directly from the call
 	fmt.Println(IntVector{100, 2, 3}.Sum())
 
-	// test 9, create the channel
-	stream := pump()
-	suck(stream)
+	// test 9
+	var million int = 1e6
+	fmt.Println(million)
+	fmt.Println(square(1.01))
 
-	var input string
-	fmt.Scanln(&input)
+	// test 10, rand.Perm playaround.
+	fmt.Println("permuattion?", rand.Perm(10))
+	candidates := rand.Perm(20)
+	for val := range candidates {
+		fmt.Println(val)
+	}
+
+	// test 11,
+	ports := []int{1, 10, 2, 44, 20, 18}
+	sort.Ints(ports)
+	fmt.Println("the sort ports is: ", ports)
+
+	// test 12
+	fmt.Println("check it:", strings.Repeat("eric", 10))
+
 }
 
 type IntVector []int
@@ -84,4 +101,8 @@ func suck(ch chan int) {
 	for {
 		fmt.Println(<-ch)
 	}
+}
+
+func square(f float64) float64 {
+	return f * f
 }
