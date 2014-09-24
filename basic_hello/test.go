@@ -9,8 +9,6 @@ import (
 	"strings"
 )
 
-var p = fmt.Println
-
 func vals() (int, int) {
 	return 3, 7
 }
@@ -76,6 +74,10 @@ func main() {
 	// test 12
 	fmt.Println("check it:", strings.Repeat("eric", 10))
 
+	// test 13
+	for i := 0; i < 5; i++ {
+		defer fmt.Printf("%d is the value\n", i)
+	}
 }
 
 type IntVector []int

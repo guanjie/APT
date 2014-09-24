@@ -45,7 +45,7 @@ func startServer(op binOp) chan<- *request {
 func main() {
 	fmt.Println("Awesome Eric!")
 
- 	adderChan := startServer(
-    	 func(a, b int) int { return a + b }
+	adderChan := startServer(
+    func(a, b int) int { return a + b }
     )
 }

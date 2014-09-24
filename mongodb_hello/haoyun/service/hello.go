@@ -34,7 +34,7 @@ func main() {
 
 	// Open mongoSession
 	fmt.Println("Awesome Eric!")
-	mongoSession, err := mgo.Dial("localhost")
+	mongoSession, err := mgo.Dial("localhost") // Adding the entries into localhost from server
 	if err != nil {
 		panic(err)
 	}
