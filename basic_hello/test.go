@@ -84,6 +84,8 @@ func main() {
 	// test 14 little usage with strings functions.
 	fmt.Println("string seafood contains food%s:%s", strings.Repeat("yea", 10), strings.Contains("seafood", ""))
 
+	// Adding more text to push again
+
 }
 
 type IntVector []int
