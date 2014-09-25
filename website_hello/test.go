@@ -3,6 +3,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/codegangsta/martini"
 	"net/http"
 )
@@ -10,10 +11,10 @@ import (
 func main() {
 	m := martini.Classic()
 
-	m.Get("/", func() string {
+	m.Get("/", func(w http.ResponseWriter) {
 		res, _ := http.Get("http://www.baidu.com")
 		status := res.Status
-		return status
+		fmt.Fprint(w, status)
 	})
 
 	m.Run()
