@@ -1,5 +1,4 @@
 // martini.go for learning purpose
-
 package main
 
 import (

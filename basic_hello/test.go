@@ -4,6 +4,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"regexp"
 	"sort"
 	"strconv"
 	"strings"
@@ -72,12 +73,17 @@ func main() {
 	fmt.Println("the sort ports is: ", ports)
 
 	// test 12
-	fmt.Println("check it:", strings.Repeat("eric", 10))
+	fmt.Println("check it:", strings.Repeat("eric\n", 10))
 
-	// test 13
-	for i := 0; i < 5; i++ {
-		defer fmt.Printf("%d is the value\n", i)
-	}
+	// test 13 regex
+	a := "I am learning Go language"
+	re, _ := regexp.Compile("[a-z]{2,4}")
+	allindex := re.FindAllIndex([]byte(a), -1)
+	fmt.Println("Find All Indices:", allindex)
+
+	// test 14 little usage with strings functions.
+	fmt.Println("string seafood contains food%s:%s", strings.Repeat("yea", 10), strings.Contains("seafood", ""))
+
 }
 
 type IntVector []int
