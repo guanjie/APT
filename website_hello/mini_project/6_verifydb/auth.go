@@ -2,20 +2,22 @@
 // **1** Adding account and password to our local mongodb.
 // **2** Send the account and password back to the sender using Json format
 // **3** Curl/http get the inforamtion I just returned
+// **4** Find out account == "human", put into interface, print it out to w
 
-// **4** Go into the MongoDB pop out account == "human"
-// **5** Put the additional tool to get the Mongodb check into tools folder
+// **5** Put the additional tool,and http://denvergophers.com/2013-04/mgo.article into a tools file.
 
 package main
 
 import (
-	// 	"encoding/json"
+	"encoding/json"
 	"fmt"
 	"github.com/go-martini/martini"
 	"github.com/martini-contrib/auth"
 	"labix.org/v2/mgo"
 	"labix.org/v2/mgo/bson"
+	"log"
 	"net/http"
+	"strconv"
 	"time"
 )
 
@@ -23,7 +25,12 @@ const databaseName string = "haoyun"
 const collectionName string = "users"
 
 type (
-	User struct {
+	UserRepo struct {
+		Collection *mgo.Collection
+	}
+
+	Users []User
+	User  struct {
 		Account  string `bson:"account"` // Virtual name used in app
 		Password string `bson:"password"`
 		Name     string `bson:"name"`
@@ -69,18 +76,37 @@ func writeJson(w http.ResponseWriter, v interface{}) {
 	}
 }
 
+func (r UserRepo) All() (users Users, err error) {
+	err = r.Collection.Find(bson.M{}).All(&users)
+	return
+}
+
 func main() {
+	fmt.Println("Eric is awesome")
 	m := martini.Classic()
 
 	mongoSession := Mongo_connect_localhost()
 	defer mongoSession.Close()
 	m.Use(auth.BasicFunc(func(account, password string) bool {
 		Mongo_insert_user(mongoSession, account, password) // **1**
-		return account == "human" && password == "isme"
+		return account == "eric" && password == "isme"
 	}))
 
 	m.Get("/", func(w http.ResponseWriter) {
+		var (
+			users []User // Import bunch of users
+			err   error
+		)
 
+		myCollection := Mongo_get_collection(mongoSession, databaseName, collectionName)
+		var repo UserRepo = UserRepo{
+			Collection: myCollection,
+		}
+
+		if users, err = repo.All(); err != nil {
+			panic(err)
+		}
+		writeJson(w, users)
 	})
 
 	m.Run()
