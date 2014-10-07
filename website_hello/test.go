@@ -3,19 +3,21 @@
 package main
 
 import (
-	"fmt"
-	"github.com/codegangsta/martini"
+	// 	"github.com/codegangsta/martini"
 	"net/http"
 )
 
 func main() {
-	m := martini.Classic()
+	//  test1 - martini
+	// 	m := martini.Classic()
+	//
+	// 	m.Get("/", func(w http.ResponseWriter) {
+	// 		res, _ := http.Get("http://www.baidu.com")
+	// 		status := res.Status
+	// 		fmt.Fprint(w, status)
+	// 	})
+	// 	m.Run()
 
-	m.Get("/", func(w http.ResponseWriter) {
-		res, _ := http.Get("http://www.baidu.com")
-		status := res.Status
-		fmt.Fprint(w, status)
-	})
+	// test2 - Check on
 
-	m.Run()
 }
