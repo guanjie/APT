@@ -4,8 +4,8 @@
 // **3** Download the file to Desktop folder
 // **4** Write a function to get all the related links
 // **5** Use the links to mass download the files
-
 // **6** Goroutine to download all the pics at the same time
+
 // **EXTRA** Ping and check all the numbers and get the most related links
 
 package main
@@ -43,22 +43,25 @@ func download_to_desktop(url string) {
 
 func all_related_links(url string) (urls []string) {
 	// XXX NEED TO MODIFY XXX for now hard coded numbers: 1 to 32
-	for i := 1; i <= 32; i++ {
-		urls = append(urls, url+strconv.Itoa(i)+".png")
+	for i := 1; i <= 26; i++ {
+		urls = append(urls, url+strconv.Itoa(i)+".jpg")
 	}
 	return
 }
 
 func mass_download_to_desktop(urls []string) {
 	for _, url := range urls {
-		download_to_desktop(url)
+		go download_to_desktop(url)
 	}
 }
 
 func main() {
 	fmt.Println("Awesome Eric!")
-	baseUrl := "http://2.p.mpcdn.net/10799/164439/"
+	baseUrl := "http://2.p.mpcdn.net/10799/164442/"
 
 	urls := all_related_links(baseUrl)
 	mass_download_to_desktop(urls)
+
+	var input string
+	fmt.Scanln(&input)
 }

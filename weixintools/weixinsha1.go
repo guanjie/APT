@@ -25,8 +25,8 @@ func main() {
 		sort.Strings(arr)
 		// 		fmt.Println(arr)
 
-		sha1_string := weixin_sha1(strings.Join(arr, ""))
-		if sha1_string == signature {
+		sha1String := weixin_sha1(strings.Join(arr, ""))
+		if sha1String == signature {
 			return echostr
 		}
 		return "not the right signature"
