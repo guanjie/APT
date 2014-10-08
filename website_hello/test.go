@@ -3,21 +3,29 @@
 package main
 
 import (
+	// 	"fmt"
 	// 	"github.com/codegangsta/martini"
-	"net/http"
+	// 	"net/http"
+	"log"
+	"os"
 )
 
 func main() {
-	//  test1 - martini
+	// 	// 	test1 - martini
 	// 	m := martini.Classic()
 	//
 	// 	m.Get("/", func(w http.ResponseWriter) {
-	// 		res, _ := http.Get("http://www.baidu.com")
-	// 		status := res.Status
-	// 		fmt.Fprint(w, status)
+	// 		resp, _ := http.Get("http://2.p.mpcdn.net/10799/164300/40.jpg")
+	// 		// 		status := resp.Status
+	// 		statusCode := resp.StatusCode
+	// 		// 		fmt.Fprint(w, status)
+	// 		fmt.Fprint(w, statusCode)
 	// 	})
 	// 	m.Run()
 
-	// test2 - Check on
-
+	// test2 - Check os.MkdirAll
+	err := os.MkdirAll("/Users/guanjiehe/Desktop/vagabond/testing", 0766)
+	if err != nil {
+		log.Fatalf("os.MkdirAll -> %v", err)
+	}
 }
