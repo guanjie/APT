@@ -24,7 +24,7 @@ func main() {
 	// 	m.Run()
 
 	// test2 - Check os.MkdirAll
-	err := os.MkdirAll("/Users/guanjiehe/Desktop/vagabond/testing", 0766)
+	err := os.MkdirAll("/Users/guanjiehe/Desktop/try", 0777)
 	if err != nil {
 		log.Fatalf("os.MkdirAll -> %v", err)
 	}

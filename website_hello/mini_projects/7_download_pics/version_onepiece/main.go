@@ -7,7 +7,7 @@
 // **6** Goroutine to download all the pics at the same time
 // **EXTRA** Ping and check all the numbers and get the most related links
 // **EXTRA** Create folder and save files on desktop
-// **EXTRA** Get all the folders ready and download all the manga pages for Vagabond
+// **EXTRA** Get all the folders ready and download all the manga pages for onepiece
 
 // **EXTRA** Refactor the download_to_desktop function, inside function it creates a folder every time.
 
@@ -46,10 +46,10 @@ func download_to_desktop(url string) {
 	foldername := splitup[len(splitup)-2]
 	filename := splitup[len(splitup)-1]
 	// XXX hardcoded path XXX
-	if err := os.MkdirAll("/Users/guanjiehe/Desktop/vagabond/"+foldername, 0766); err != nil {
+	if err := os.MkdirAll("/Users/guanjiehe/Desktop/onepiece/"+foldername, 0766); err != nil {
 		log.Fatalf("os.MkdirAll -> %v", err)
 	}
-	if err := ioutil.WriteFile("/Users/guanjiehe/Desktop/vagabond/"+foldername+"/"+filename, data, 0766); err != nil {
+	if err := ioutil.WriteFile("/Users/guanjiehe/Desktop/onepiece/"+foldername+"/"+filename, data, 0766); err != nil {
 		log.Fatalf("ioutil.WriteFile -> %v", err)
 	}
 }
@@ -72,7 +72,7 @@ func mass_download_to_desktop(urls []string) {
 		if err != nil {
 			log.Fatalf("http.Get in mass download func -> %v", err)
 		}
-		defer resp.Body.Close()
+		resp.Body.Close()
 
 		go download_to_desktop(url)
 	}
@@ -80,9 +80,9 @@ func mass_download_to_desktop(urls []string) {
 
 func main() {
 	fmt.Println("Awesome Eric!")
-	baseUrl := "http://2.p.mpcdn.net/10799/"
-	const startIndex = 164357
-	const endIndex = 164439
+	baseUrl := "http://2.p.mpcdn.net/21471/"
+	const startIndex = 363671
+	const endIndex = 363800
 
 	for i := startIndex; i <= endIndex; i++ {
 		urls := all_related_links(baseUrl + strconv.Itoa(i) + "/")
