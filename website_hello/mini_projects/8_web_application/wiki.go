@@ -16,14 +16,13 @@ type Page struct {
 
 func (p *Page) save() error {
 	filename := p.Title + ".txt"
-	return ioutil.WriteFile(filename, p.Body, 0766)
+	return ioutil.WriteFile("./page_data/"+filename, p.Body, 0766) // XXX ioutil deals with []byte type
 }
 
 func loadPage(title string) (*Page, error) {
 	filename := title + ".txt"
-	body, err := ioutil.ReadFile(filename)
+	body, err := ioutil.ReadFile("./page_data/" + filename)
 	if err != nil {
-		log.Fatalf("ioutil.ReadFile -> %v", err)
 		return nil, err
 	}
 	return &Page{Title: title, Body: body}, nil
@@ -33,8 +32,8 @@ func viewHandler(w http.ResponseWriter, r *http.Request) {
 	title := r.URL.Path[len("/view/"):]
 	page, err := loadPage(title)
 	if err != nil {
-		log.Fatalf(" loadPage from Viewhandler-> %v", err)
-		page = &Page{Title: "empty"}
+		http.Redirect(w, r, "/edit/"+title, http.StatusFound)
+		return
 	}
 	renderTemplate(w, "view", page)
 }
@@ -43,21 +42,37 @@ func editHandler(w http.ResponseWriter, r *http.Request) {
 	title := r.URL.Path[len("/edit/"):]
 	page, err := loadPage(title)
 	if err != nil {
-		log.Fatalf("LoadPage -> %v", err)
 		page = &Page{Title: title}
 	}
 	renderTemplate(w, "edit", page)
 }
 
 func renderTemplate(w http.ResponseWriter, tmplName string, p *Page) {
-	t, _ := template.ParseFiles("./templates/" + tmplName + ".html")
-	t.Execute(w, p)
+	t, err := template.ParseFiles("./templates/" + tmplName + ".html")
+	if err != nil {
+		log.Fatalf("renderTempalte parsefiles error -> %v", err)
+	}
+	if err := t.Execute(w, p); err != nil {
+		log.Fatalf("t.Execute -> %v", err)
+	}
+}
+
+func saveHandler(w http.ResponseWriter, r *http.Request) {
+	title := r.URL.Path[len("/save/"):]
+	// XXX hard part, request is a POST request of the form information
+	body := r.FormValue("body")
+	page := &Page{Title: title, Body: []byte(body)}
+	err := page.save()
+	if err != nil {
+		log.Fatalf("page.save() -> %v", err)
+	}
+	http.Redirect(w, r, "/view/"+title, http.StatusFound)
 }
 
 func main() {
 	fmt.Println("Awesome Eric!")
 	http.HandleFunc("/view/", viewHandler)
 	http.HandleFunc("/edit/", editHandler)
-	// 	http.HandleFunc("/save/", saveHandler)
+	http.HandleFunc("/save/", saveHandler)
 	http.ListenAndServe(":8080", nil)
 }
