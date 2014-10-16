@@ -36,9 +36,7 @@ func viewHandler(w http.ResponseWriter, r *http.Request) {
 		log.Fatalf(" loadPage from Viewhandler-> %v", err)
 		page = &Page{Title: "empty"}
 	}
-
-	t, _ := template.ParseFiles("view.html")
-	t.Execute(w, page)
+	renderTemplate(w, "view", page)
 }
 
 func editHandler(w http.ResponseWriter, r *http.Request) {
@@ -48,9 +46,12 @@ func editHandler(w http.ResponseWriter, r *http.Request) {
 		log.Fatalf("LoadPage -> %v", err)
 		page = &Page{Title: title}
 	}
+	renderTemplate(w, "edit", page)
+}
 
-	t, _ := template.ParseFiles("./templates/edit.html")
-	t.Execute(w, page)
+func renderTemplate(w http.ResponseWriter, tmplName string, p *Page) {
+	t, _ := template.ParseFiles("./templates/" + tmplName + ".html")
+	t.Execute(w, p)
 }
 
 func main() {
