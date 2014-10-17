@@ -2,11 +2,13 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"html/template"
 	"io/ioutil"
 	"log"
 	"net/http"
+	"regexp"
 )
 
 type Page struct {
@@ -14,10 +16,9 @@ type Page struct {
 	Body  []byte
 }
 
-var (
-	// To cache the templates first
-	templates = template.Must(template.ParseFiles("./templates/edit.html", "./templates/view.html"))
-)
+// To cache the templates first
+var templates = template.Must(template.ParseFiles("./templates/edit.html", "./templates/view.html"))
+var validPath = regexp.MustCompile("^/(edit|view|save)/([0-9a-zA-Z]+)$")
 
 func (p *Page) save() error {
 	filename := p.Title + ".txt"
@@ -33,23 +34,13 @@ func loadPage(title string) (*Page, error) {
 	return &Page{Title: title, Body: body}, nil
 }
 
-func viewHandler(w http.ResponseWriter, r *http.Request) {
-	title := r.URL.Path[len("/view/"):]
-	page, err := loadPage(title)
-	if err != nil {
-		http.Redirect(w, r, "/edit/"+title, http.StatusFound)
-		return
+func getTitle(w http.ResponseWriter, r *http.Request) (string, error) {
+	match := validPath.FindStringSubmatch(r.URL.Path)
+	if match == nil {
+		log.Fatalf("Not found validPath")
+		return "", errors.New("Invalid Title")
 	}
-	renderTemplate(w, "view", page)
-}
-
-func editHandler(w http.ResponseWriter, r *http.Request) {
-	title := r.URL.Path[len("/edit/"):]
-	page, err := loadPage(title)
-	if err != nil {
-		page = &Page{Title: title}
-	}
-	renderTemplate(w, "edit", page)
+	return match[2], nil
 }
 
 func renderTemplate(w http.ResponseWriter, tmplName string, p *Page) {
@@ -59,13 +50,41 @@ func renderTemplate(w http.ResponseWriter, tmplName string, p *Page) {
 	}
 }
 
+func viewHandler(w http.ResponseWriter, r *http.Request) {
+	title, err := getTitle(w, r)
+	if err != nil {
+		log.Fatalf(" viewHandler getTitle-> %v", err)
+	}
+	page, err := loadPage(title)
+	if err != nil {
+		http.Redirect(w, r, "/edit/"+title, http.StatusFound)
+		return
+	}
+	renderTemplate(w, "view", page)
+}
+
+func editHandler(w http.ResponseWriter, r *http.Request) {
+	title, err := getTitle(w, r)
+	if err != nil {
+		log.Fatalf("editHandler getTitle -> %v", err)
+	}
+	page, err := loadPage(title)
+	if err != nil {
+		page = &Page{Title: title}
+	}
+	renderTemplate(w, "edit", page)
+}
+
 func saveHandler(w http.ResponseWriter, r *http.Request) {
-	title := r.URL.Path[len("/save/"):]
+	title, err := getTitle(w, r)
+	if err != nil {
+		log.Fatalf("saveHandler getTitle -> %v", err)
+	}
+
 	// XXX hard part, request is a POST request of the form information
 	body := r.FormValue("body")
 	page := &Page{Title: title, Body: []byte(body)}
-	err := page.save()
-	if err != nil {
+	if err := page.save(); err != nil {
 		log.Fatalf("page.save() -> %v", err)
 	}
 	http.Redirect(w, r, "/view/"+title, http.StatusFound)
