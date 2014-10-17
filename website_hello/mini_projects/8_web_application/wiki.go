@@ -14,6 +14,11 @@ type Page struct {
 	Body  []byte
 }
 
+var (
+	// To cache the templates first
+	templates = template.Must(template.ParseFiles("./templates/edit.html", "./templates/view.html"))
+)
+
 func (p *Page) save() error {
 	filename := p.Title + ".txt"
 	return ioutil.WriteFile("./page_data/"+filename, p.Body, 0766) // XXX ioutil deals with []byte type
@@ -48,12 +53,9 @@ func editHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func renderTemplate(w http.ResponseWriter, tmplName string, p *Page) {
-	t, err := template.ParseFiles("./templates/" + tmplName + ".html")
+	err := templates.ExecuteTemplate(w, tmplName+".html", p)
 	if err != nil {
 		log.Fatalf("renderTempalte parsefiles error -> %v", err)
-	}
-	if err := t.Execute(w, p); err != nil {
-		log.Fatalf("t.Execute -> %v", err)
 	}
 }
 
