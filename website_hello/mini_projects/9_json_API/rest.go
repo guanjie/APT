@@ -12,10 +12,12 @@ import (
 type Payload struct {
 	Stuff Data
 }
+
 type Data struct {
 	Fruit   Fruits
 	Veggies Vegetables
 }
+
 type Fruits map[string]int
 type Vegetables map[string]int
 
