@@ -76,6 +76,7 @@ func writeJson(w http.ResponseWriter, v interface{}) {
 	}
 }
 
+// XXX why users don't need to be declared first? Cuz main function both were declared
 func (r UserRepo) All() (users Users, err error) {
 	err = r.Collection.Find(bson.M{}).All(&users)
 	return
@@ -98,6 +99,7 @@ func main() {
 			err   error
 		)
 
+		// myCollection
 		myCollection := Mongo_get_collection(mongoSession, databaseName, collectionName)
 		var repo UserRepo = UserRepo{
 			Collection: myCollection,

@@ -36,6 +36,7 @@ func main() {
 	http.ListenAndServe(":8080", nil)
 }
 
+// json.Marshal returns []byte type
 func getJsonResponse() ([]byte, error) {
 	fruits := make(map[string]int)
 	fruits["Apple"] = 25
