@@ -34,5 +34,4 @@ func main() {
 	collection := mongoSession.DB("advent").C("wishes")
 	collection.Insert(todo1)
 	collection.Insert(todo2)
-
 }
