@@ -58,6 +58,5 @@ func main() {
 	// Set the additional data using "$set" inside the new M map[string]interface{}, tried Upsert, Update and UpdateAll
 	type M map[string]interface{}
 	change := M{"$set": Todo{Updated: time.Now()}}
-	collection.UpdateAll(bson.M{"nbbbb": "nbme"}, change)
-
+	collection.Upsert(bson.M{"nbbbb": "nbme"}, change)
 }
