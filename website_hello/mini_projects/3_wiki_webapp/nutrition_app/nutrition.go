@@ -28,7 +28,6 @@ type Page struct {
 	Body  []byte `bson:body,omitempty`
 }
 
-// To cache the templates first
 var templates = template.Must(template.ParseFiles("./templates/edit.html", "./templates/view.html"))
 var validPath = regexp.MustCompile("^/(edit|view|save)/([0-9a-zA-Z]+)$")
 var pages *mgo.Collection
@@ -103,7 +102,6 @@ func editHandler(w http.ResponseWriter, r *http.Request, title string) {
 }
 
 func saveHandler(w http.ResponseWriter, r *http.Request, title string) {
-	// XXX hard part, request is a POST request of the form information
 	body := r.FormValue("body")
 	page := &Page{Title: title, Body: []byte(body)}
 	if err := page.save(); err != nil {
