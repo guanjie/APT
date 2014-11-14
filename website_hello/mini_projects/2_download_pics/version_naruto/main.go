@@ -9,8 +9,6 @@
 // **EXTRA** Create folder and save files on desktop
 // **EXTRA** Get all the folders ready and download all the manga pages for naruto
 
-// **EXTRA** Refactor the download_to_desktop function, inside function it creates a folder every time.
-
 package main
 
 import (
@@ -23,15 +21,55 @@ import (
 	"strings"
 )
 
+func main() {
+	// input info
+	ch := make(chan []string, 10)
+	baseUrl := "http://2.p.mpcdn.net/20606/"
+	const startIndex = 338065
+	const endIndex = 338600
+
+	// get all urls and mass download them
+	for i := startIndex; i <= endIndex; i++ {
+		// get episode urls
+		urls := geturls(baseUrl + strconv.Itoa(i) + "/")
+		// HINT: Use time.sleep/ time.after
+		go func() {
+			ch <- urls
+		}()
+	}
+
+	for {
+		select {
+		case urls := <-ch:
+			saveimages(urls)
+		}
+	}
+
+	var input string
+	fmt.Scanln(&input)
+}
+
+// get episode urls
+func geturls(url string) (urls []string) {
+	// XXX NEED TO MODIFY XXX for now hard coded numbers: 1 to 50
+	for i := 1; i <= 50; i++ {
+		urls = append(urls, url+strconv.Itoa(i)+".jpg")
+	}
+	return
+}
+
+func saveimages(urls []string) {
+	for _, url := range urls {
+		go download_to_desktop(url)
+	}
+}
+
 func download_to_desktop(url string) {
 	// Get response from the jpg link
-	resp, err := http.Get(url)
+	resp, _ := http.Get(url)
 	if resp.StatusCode == 404 {
-		log.Fatal("404 code error")
-		return
-	}
-	if err != nil {
-		log.Fatalf("http.Get -> %v", err)
+		// don't do anything
+		fmt.Println("404 code error from url:", url)
 	}
 	defer resp.Body.Close()
 
@@ -41,11 +79,8 @@ func download_to_desktop(url string) {
 		log.Fatalf("ioutil.ReadAll -> %v", err)
 	}
 
-	// Write file from data to file path
-	splitup := strings.Split(url, "/")
-	foldername := splitup[len(splitup)-2]
-	filename := splitup[len(splitup)-1]
-	// XXX hardcoded path XXX
+	// MkdirAll and WriteFile
+	foldername, filename := urltonames(url)
 	if err := os.MkdirAll("/Users/guanjiehe/Desktop/naruto/"+foldername, 0766); err != nil {
 		log.Fatalf("os.MkdirAll -> %v", err)
 	}
@@ -54,41 +89,10 @@ func download_to_desktop(url string) {
 	}
 }
 
-func all_related_links(url string) (urls []string) {
-	// XXX NEED TO MODIFY XXX for now hard coded numbers: 1 to 50
-	for i := 1; i <= 50; i++ {
-		urls = append(urls, url+strconv.Itoa(i)+".jpg")
-	}
-	return
-}
-
-func mass_download_to_desktop(urls []string) {
-	for _, url := range urls {
-		// Check if there is a 404, if there is, break and return
-		resp, err := http.Get(url)
-		if resp.StatusCode == 404 {
-			return
-		}
-		if err != nil {
-			log.Fatalf("http.Get in mass download func -> %v", err)
-		}
-		resp.Body.Close()
-
-		go download_to_desktop(url)
-	}
-}
-
-func main() {
-	fmt.Println("Awesome Eric!")
-	baseUrl := "http://2.p.mpcdn.net/20606/"
-	const startIndex = 338065
-	const endIndex = 339000
-
-	for i := startIndex; i <= endIndex; i++ {
-		urls := all_related_links(baseUrl + strconv.Itoa(i) + "/")
-		mass_download_to_desktop(urls)
-	}
-
-	var input string
-	fmt.Scanln(&input)
+func urltonames(url string) (string, string) {
+	// Write file from data to file path
+	splitup := strings.Split(url, "/")
+	foldername := splitup[len(splitup)-2]
+	filename := splitup[len(splitup)-1]
+	return foldername, filename
 }
