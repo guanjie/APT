@@ -50,7 +50,7 @@ func login(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("method", r.Method) // get request method
 	// Upon getting into the page it's a GET method.
 	if r.Method == "GET" {
-		t, _ := template.ParseFiles("./templates/login.gtpl")
+		t, _ := template.ParseFiles("templates/login.gtpl")
 		// This will then show to w.
 		t.Execute(w, nil)
 	} else { // ??? hence it's POST in here
