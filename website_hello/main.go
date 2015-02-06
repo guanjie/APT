@@ -14,15 +14,11 @@ func main() {
 		return "Hello world"
 	})
 
+	// 算法开始
 	m.Get("/number/:num", func(params martini.Params) string {
-		num_str := params["num"]
-		num, _ := strconv.Atoi(num_str)
+		num, _ := strconv.Atoi(params["num"])
 		num = powerto3(num)
 		return "Hello the number " + params["num"] + " to the power 3 is: " + strconv.Itoa(num)
-	})
-
-	m.Get("/hello/:name/:verb" /* Auth,*/, func(params martini.Params) string {
-		return "Hello " + params["name"] + " and you are " + params["verb"]
 	})
 
 	m.Run()
@@ -31,11 +27,3 @@ func main() {
 func powerto3(num int) int {
 	return num * num * num
 }
-
-/*
-func Auth(res http.ResponseWriter, req *http.Request) {
-	if req.Header.Get("API-KEY") != "secret123" {
-		http.Error(res, "Nope", 401)
-	}
-}
-*/
