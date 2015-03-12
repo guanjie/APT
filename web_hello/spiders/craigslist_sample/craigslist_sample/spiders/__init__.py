@@ -16,10 +16,13 @@ class MySpider(BaseSpider):
         sel = Selector(response)
 
         # or titles = response.selector.xpath("//p")
-        titles = sel.xpath("//p")
+        titles = sel.xpath("//span[@class='pl']")
         items = []
         for title in titles:
             item = CraigslistSampleItem()
+
+            # Remember to use "a/text()" directly,
+            # not /a -- specific not //a -- check all
             item["title"] = title.xpath("a/text()").extract()
             item["link"] = title.xpath("a/@href").extract()
             items.append(item)

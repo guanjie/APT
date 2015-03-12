@@ -1,3 +1,5 @@
 *.out
 *.log
 gin-bin
+basic_tools/basic_hello/mini_projects/go-koans
+basic_tools/basic_hello/project_euler
