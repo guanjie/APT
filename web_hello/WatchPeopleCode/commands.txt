@@ -1,0 +1,5 @@
+选择了这个developers_guide_python，跟着这个tutorial
+https://developers.google.com/youtube/1.0/developers_guide_python
+
+source venv/bin/activate
+sudo pip install gdata
