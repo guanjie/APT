@@ -10,19 +10,19 @@ import (
 
 func main() {
 	m := martini.Classic()
-	m.Get("/", func(r *http.Request) string {
+	m.Get("/eric", func(r *http.Request) string {
 		return "Hello world"
 	})
 
 	// 算法开始
-	m.Get("/number/:num", func(params martini.Params) string {
+	m.Get("/eric/number/:num", func(params martini.Params) string {
 		num, _ := strconv.Atoi(params["num"])
 		num = powerto3(num)
 		return "Hello the number " + params["num"] + " to the power 3 is: " + strconv.Itoa(num)
 	})
 
 	// 拿到一个城市的温度
-	m.Get("/weather/:city", func(w http.ResponseWriter, r *http.Request, params martini.Params) {
+	m.Get("/eric/weather/:city", func(w http.ResponseWriter, r *http.Request, params martini.Params) {
 		resp, _ := http.Get("http://api.openweathermap.org/data/2.5/weather?q=" + params["city"])
 		defer resp.Body.Close()
 
