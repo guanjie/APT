@@ -30,6 +30,15 @@ func main() {
 		w.Write(body)
 	})
 
+	// 英文字典
+	m.Get("/dictionary/:word", func(w http.ResponseWriter, r *http.Request, params martini.Params) {
+		resp, _ := http.Get("https://api.pearson.com/v2/dictionaries/ldec/entries?headword=" + params["word"])
+		defer resp.Body.Close()
+
+		body, _ := ioutil.ReadAll(resp.Body)
+		w.Write(body)
+	})
+
 	m.Run()
 }
 
