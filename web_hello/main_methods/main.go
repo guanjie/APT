@@ -31,7 +31,7 @@ func main() {
 	})
 
 	// 英文字典
-	m.Get("/dictionary/:word", func(w http.ResponseWriter, r *http.Request, params martini.Params) {
+	m.Get("/eric/dictionary/:word", func(w http.ResponseWriter, r *http.Request, params martini.Params) {
 		resp, _ := http.Get("https://api.pearson.com/v2/dictionaries/ldec/entries?headword=" + params["word"])
 		defer resp.Body.Close()
 
