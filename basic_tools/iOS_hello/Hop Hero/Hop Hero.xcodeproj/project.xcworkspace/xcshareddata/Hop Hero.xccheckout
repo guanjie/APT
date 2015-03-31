@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B30E8E44-AAA0-4869-BDDE-F5A5714B89F8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Hop Hero</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6777F6C969112E5C4F6B36F40EBF9B012F885D3C</key>
+		<string>https://github.com/guanjie/erictools.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>basic_tools/iOS_hello/Hop Hero/Hop Hero.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6777F6C969112E5C4F6B36F40EBF9B012F885D3C</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/guanjie/erictools.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6777F6C969112E5C4F6B36F40EBF9B012F885D3C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6777F6C969112E5C4F6B36F40EBF9B012F885D3C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>erictools</string>
+		</dict>
+	</array>
+</dict>
+</plist>
