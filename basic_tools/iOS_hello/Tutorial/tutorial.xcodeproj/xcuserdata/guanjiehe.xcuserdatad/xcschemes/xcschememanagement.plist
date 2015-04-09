@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Hop Hero.xcscheme</key>
+		<key>tutorial.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>BF7E49CB1AD668A500C0019B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BF7E49E91AD668A600C0019B</key>
+		<key>BF5BDC021ACA3C09003CE147</key>
 		<dict>
 			<key>primary</key>
 			<true/>

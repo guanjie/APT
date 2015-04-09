@@ -1,19 +1,19 @@
 //
-//  Hop_HeroTests.m
-//  Hop HeroTests
+//  testingTests.m
+//  testingTests
 //
-//  Created by humancool on 4/9/15.
+//  Created by humancool on 4/7/15.
 //  Copyright (c) 2015 humancool. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface Hop_HeroTests : XCTestCase
+@interface testingTests : XCTestCase
 
 @end
 
-@implementation Hop_HeroTests
+@implementation testingTests
 
 - (void)setUp {
     [super setUp];

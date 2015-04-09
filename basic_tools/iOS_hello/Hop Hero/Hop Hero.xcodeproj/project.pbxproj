@@ -7,55 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BFC0C1261ACA29DC00F0002F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC0C1251ACA29DC00F0002F /* main.m */; };
-		BFC0C1291ACA29DC00F0002F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC0C1281ACA29DC00F0002F /* AppDelegate.m */; };
-		BFC0C12C1ACA29DC00F0002F /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC0C12B1ACA29DC00F0002F /* GameScene.m */; };
-		BFC0C12E1ACA29DC00F0002F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFC0C12D1ACA29DC00F0002F /* GameScene.sks */; };
-		BFC0C1311ACA29DC00F0002F /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC0C1301ACA29DC00F0002F /* GameViewController.m */; };
-		BFC0C1341ACA29DC00F0002F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC0C1321ACA29DC00F0002F /* Main.storyboard */; };
-		BFC0C1361ACA29DC00F0002F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC0C1351ACA29DC00F0002F /* Images.xcassets */; };
-		BFC0C1391ACA29DC00F0002F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFC0C1371ACA29DC00F0002F /* LaunchScreen.xib */; };
-		BFC0C1451ACA29DC00F0002F /* Hop_HeroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC0C1441ACA29DC00F0002F /* Hop_HeroTests.m */; };
+		BF7E49D21AD668A500C0019B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7E49D11AD668A500C0019B /* main.m */; };
+		BF7E49D51AD668A500C0019B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7E49D41AD668A500C0019B /* AppDelegate.m */; };
+		BF7E49D81AD668A500C0019B /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7E49D71AD668A500C0019B /* GameScene.m */; };
+		BF7E49DA1AD668A500C0019B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF7E49D91AD668A500C0019B /* GameScene.sks */; };
+		BF7E49DD1AD668A500C0019B /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7E49DC1AD668A500C0019B /* GameViewController.m */; };
+		BF7E49E01AD668A500C0019B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF7E49DE1AD668A500C0019B /* Main.storyboard */; };
+		BF7E49E21AD668A500C0019B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF7E49E11AD668A500C0019B /* Images.xcassets */; };
+		BF7E49E51AD668A500C0019B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7E49E31AD668A500C0019B /* LaunchScreen.xib */; };
+		BF7E49F11AD668A600C0019B /* Hop_HeroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7E49F01AD668A600C0019B /* Hop_HeroTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BFC0C13F1ACA29DC00F0002F /* PBXContainerItemProxy */ = {
+		BF7E49EB1AD668A600C0019B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BFC0C1181ACA29DC00F0002F /* Project object */;
+			containerPortal = BF7E49C41AD668A500C0019B /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BFC0C11F1ACA29DC00F0002F;
+			remoteGlobalIDString = BF7E49CB1AD668A500C0019B;
 			remoteInfo = "Hop Hero";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BFC0C1201ACA29DC00F0002F /* Hop Hero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hop Hero.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFC0C1241ACA29DC00F0002F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFC0C1251ACA29DC00F0002F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BFC0C1271ACA29DC00F0002F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		BFC0C1281ACA29DC00F0002F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BFC0C12A1ACA29DC00F0002F /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		BFC0C12B1ACA29DC00F0002F /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
-		BFC0C12D1ACA29DC00F0002F /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		BFC0C12F1ACA29DC00F0002F /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		BFC0C1301ACA29DC00F0002F /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
-		BFC0C1331ACA29DC00F0002F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BFC0C1351ACA29DC00F0002F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		BFC0C1381ACA29DC00F0002F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		BFC0C13E1ACA29DC00F0002F /* Hop HeroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hop HeroTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFC0C1431ACA29DC00F0002F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFC0C1441ACA29DC00F0002F /* Hop_HeroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hop_HeroTests.m; sourceTree = "<group>"; };
+		BF7E49CC1AD668A500C0019B /* Hop Hero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hop Hero.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF7E49D01AD668A500C0019B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF7E49D11AD668A500C0019B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BF7E49D31AD668A500C0019B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BF7E49D41AD668A500C0019B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BF7E49D61AD668A500C0019B /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		BF7E49D71AD668A500C0019B /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		BF7E49D91AD668A500C0019B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		BF7E49DB1AD668A500C0019B /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		BF7E49DC1AD668A500C0019B /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		BF7E49DF1AD668A500C0019B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF7E49E11AD668A500C0019B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BF7E49E41AD668A500C0019B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		BF7E49EA1AD668A600C0019B /* Hop HeroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hop HeroTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF7E49EF1AD668A600C0019B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF7E49F01AD668A600C0019B /* Hop_HeroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hop_HeroTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BFC0C11D1ACA29DC00F0002F /* Frameworks */ = {
+		BF7E49C91AD668A500C0019B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BFC0C13B1ACA29DC00F0002F /* Frameworks */ = {
+		BF7E49E71AD668A600C0019B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -65,64 +65,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BFC0C1171ACA29DC00F0002F = {
+		BF7E49C31AD668A500C0019B = {
 			isa = PBXGroup;
 			children = (
-				BFC0C1221ACA29DC00F0002F /* Hop Hero */,
-				BFC0C1411ACA29DC00F0002F /* Hop HeroTests */,
-				BFC0C1211ACA29DC00F0002F /* Products */,
+				BF7E49CE1AD668A500C0019B /* Hop Hero */,
+				BF7E49ED1AD668A600C0019B /* Hop HeroTests */,
+				BF7E49CD1AD668A500C0019B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		BFC0C1211ACA29DC00F0002F /* Products */ = {
+		BF7E49CD1AD668A500C0019B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BFC0C1201ACA29DC00F0002F /* Hop Hero.app */,
-				BFC0C13E1ACA29DC00F0002F /* Hop HeroTests.xctest */,
+				BF7E49CC1AD668A500C0019B /* Hop Hero.app */,
+				BF7E49EA1AD668A600C0019B /* Hop HeroTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BFC0C1221ACA29DC00F0002F /* Hop Hero */ = {
+		BF7E49CE1AD668A500C0019B /* Hop Hero */ = {
 			isa = PBXGroup;
 			children = (
-				BFC0C1271ACA29DC00F0002F /* AppDelegate.h */,
-				BFC0C1281ACA29DC00F0002F /* AppDelegate.m */,
-				BFC0C12A1ACA29DC00F0002F /* GameScene.h */,
-				BFC0C12B1ACA29DC00F0002F /* GameScene.m */,
-				BFC0C12D1ACA29DC00F0002F /* GameScene.sks */,
-				BFC0C12F1ACA29DC00F0002F /* GameViewController.h */,
-				BFC0C1301ACA29DC00F0002F /* GameViewController.m */,
-				BFC0C1321ACA29DC00F0002F /* Main.storyboard */,
-				BFC0C1351ACA29DC00F0002F /* Images.xcassets */,
-				BFC0C1371ACA29DC00F0002F /* LaunchScreen.xib */,
-				BFC0C1231ACA29DC00F0002F /* Supporting Files */,
+				BF7E49D31AD668A500C0019B /* AppDelegate.h */,
+				BF7E49D41AD668A500C0019B /* AppDelegate.m */,
+				BF7E49D61AD668A500C0019B /* GameScene.h */,
+				BF7E49D71AD668A500C0019B /* GameScene.m */,
+				BF7E49D91AD668A500C0019B /* GameScene.sks */,
+				BF7E49DB1AD668A500C0019B /* GameViewController.h */,
+				BF7E49DC1AD668A500C0019B /* GameViewController.m */,
+				BF7E49DE1AD668A500C0019B /* Main.storyboard */,
+				BF7E49E11AD668A500C0019B /* Images.xcassets */,
+				BF7E49E31AD668A500C0019B /* LaunchScreen.xib */,
+				BF7E49CF1AD668A500C0019B /* Supporting Files */,
 			);
 			path = "Hop Hero";
 			sourceTree = "<group>";
 		};
-		BFC0C1231ACA29DC00F0002F /* Supporting Files */ = {
+		BF7E49CF1AD668A500C0019B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BFC0C1241ACA29DC00F0002F /* Info.plist */,
-				BFC0C1251ACA29DC00F0002F /* main.m */,
+				BF7E49D01AD668A500C0019B /* Info.plist */,
+				BF7E49D11AD668A500C0019B /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BFC0C1411ACA29DC00F0002F /* Hop HeroTests */ = {
+		BF7E49ED1AD668A600C0019B /* Hop HeroTests */ = {
 			isa = PBXGroup;
 			children = (
-				BFC0C1441ACA29DC00F0002F /* Hop_HeroTests.m */,
-				BFC0C1421ACA29DC00F0002F /* Supporting Files */,
+				BF7E49F01AD668A600C0019B /* Hop_HeroTests.m */,
+				BF7E49EE1AD668A600C0019B /* Supporting Files */,
 			);
 			path = "Hop HeroTests";
 			sourceTree = "<group>";
 		};
-		BFC0C1421ACA29DC00F0002F /* Supporting Files */ = {
+		BF7E49EE1AD668A600C0019B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BFC0C1431ACA29DC00F0002F /* Info.plist */,
+				BF7E49EF1AD668A600C0019B /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -130,13 +130,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BFC0C11F1ACA29DC00F0002F /* Hop Hero */ = {
+		BF7E49CB1AD668A500C0019B /* Hop Hero */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BFC0C1481ACA29DC00F0002F /* Build configuration list for PBXNativeTarget "Hop Hero" */;
+			buildConfigurationList = BF7E49F41AD668A600C0019B /* Build configuration list for PBXNativeTarget "Hop Hero" */;
 			buildPhases = (
-				BFC0C11C1ACA29DC00F0002F /* Sources */,
-				BFC0C11D1ACA29DC00F0002F /* Frameworks */,
-				BFC0C11E1ACA29DC00F0002F /* Resources */,
+				BF7E49C81AD668A500C0019B /* Sources */,
+				BF7E49C91AD668A500C0019B /* Frameworks */,
+				BF7E49CA1AD668A500C0019B /* Resources */,
 			);
 			buildRules = (
 			);
@@ -144,46 +144,46 @@
 			);
 			name = "Hop Hero";
 			productName = "Hop Hero";
-			productReference = BFC0C1201ACA29DC00F0002F /* Hop Hero.app */;
+			productReference = BF7E49CC1AD668A500C0019B /* Hop Hero.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BFC0C13D1ACA29DC00F0002F /* Hop HeroTests */ = {
+		BF7E49E91AD668A600C0019B /* Hop HeroTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BFC0C14B1ACA29DC00F0002F /* Build configuration list for PBXNativeTarget "Hop HeroTests" */;
+			buildConfigurationList = BF7E49F71AD668A600C0019B /* Build configuration list for PBXNativeTarget "Hop HeroTests" */;
 			buildPhases = (
-				BFC0C13A1ACA29DC00F0002F /* Sources */,
-				BFC0C13B1ACA29DC00F0002F /* Frameworks */,
-				BFC0C13C1ACA29DC00F0002F /* Resources */,
+				BF7E49E61AD668A600C0019B /* Sources */,
+				BF7E49E71AD668A600C0019B /* Frameworks */,
+				BF7E49E81AD668A600C0019B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BFC0C1401ACA29DC00F0002F /* PBXTargetDependency */,
+				BF7E49EC1AD668A600C0019B /* PBXTargetDependency */,
 			);
 			name = "Hop HeroTests";
 			productName = "Hop HeroTests";
-			productReference = BFC0C13E1ACA29DC00F0002F /* Hop HeroTests.xctest */;
+			productReference = BF7E49EA1AD668A600C0019B /* Hop HeroTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BFC0C1181ACA29DC00F0002F /* Project object */ = {
+		BF7E49C41AD668A500C0019B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = humancool;
 				TargetAttributes = {
-					BFC0C11F1ACA29DC00F0002F = {
+					BF7E49CB1AD668A500C0019B = {
 						CreatedOnToolsVersion = 6.1;
 					};
-					BFC0C13D1ACA29DC00F0002F = {
+					BF7E49E91AD668A600C0019B = {
 						CreatedOnToolsVersion = 6.1;
-						TestTargetID = BFC0C11F1ACA29DC00F0002F;
+						TestTargetID = BF7E49CB1AD668A500C0019B;
 					};
 				};
 			};
-			buildConfigurationList = BFC0C11B1ACA29DC00F0002F /* Build configuration list for PBXProject "Hop Hero" */;
+			buildConfigurationList = BF7E49C71AD668A500C0019B /* Build configuration list for PBXProject "Hop Hero" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -191,30 +191,30 @@
 				en,
 				Base,
 			);
-			mainGroup = BFC0C1171ACA29DC00F0002F;
-			productRefGroup = BFC0C1211ACA29DC00F0002F /* Products */;
+			mainGroup = BF7E49C31AD668A500C0019B;
+			productRefGroup = BF7E49CD1AD668A500C0019B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BFC0C11F1ACA29DC00F0002F /* Hop Hero */,
-				BFC0C13D1ACA29DC00F0002F /* Hop HeroTests */,
+				BF7E49CB1AD668A500C0019B /* Hop Hero */,
+				BF7E49E91AD668A600C0019B /* Hop HeroTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BFC0C11E1ACA29DC00F0002F /* Resources */ = {
+		BF7E49CA1AD668A500C0019B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFC0C1391ACA29DC00F0002F /* LaunchScreen.xib in Resources */,
-				BFC0C1361ACA29DC00F0002F /* Images.xcassets in Resources */,
-				BFC0C12E1ACA29DC00F0002F /* GameScene.sks in Resources */,
-				BFC0C1341ACA29DC00F0002F /* Main.storyboard in Resources */,
+				BF7E49E51AD668A500C0019B /* LaunchScreen.xib in Resources */,
+				BF7E49E21AD668A500C0019B /* Images.xcassets in Resources */,
+				BF7E49DA1AD668A500C0019B /* GameScene.sks in Resources */,
+				BF7E49E01AD668A500C0019B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BFC0C13C1ACA29DC00F0002F /* Resources */ = {
+		BF7E49E81AD668A600C0019B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -224,48 +224,48 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BFC0C11C1ACA29DC00F0002F /* Sources */ = {
+		BF7E49C81AD668A500C0019B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFC0C1311ACA29DC00F0002F /* GameViewController.m in Sources */,
-				BFC0C1291ACA29DC00F0002F /* AppDelegate.m in Sources */,
-				BFC0C12C1ACA29DC00F0002F /* GameScene.m in Sources */,
-				BFC0C1261ACA29DC00F0002F /* main.m in Sources */,
+				BF7E49DD1AD668A500C0019B /* GameViewController.m in Sources */,
+				BF7E49D51AD668A500C0019B /* AppDelegate.m in Sources */,
+				BF7E49D81AD668A500C0019B /* GameScene.m in Sources */,
+				BF7E49D21AD668A500C0019B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BFC0C13A1ACA29DC00F0002F /* Sources */ = {
+		BF7E49E61AD668A600C0019B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFC0C1451ACA29DC00F0002F /* Hop_HeroTests.m in Sources */,
+				BF7E49F11AD668A600C0019B /* Hop_HeroTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BFC0C1401ACA29DC00F0002F /* PBXTargetDependency */ = {
+		BF7E49EC1AD668A600C0019B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BFC0C11F1ACA29DC00F0002F /* Hop Hero */;
-			targetProxy = BFC0C13F1ACA29DC00F0002F /* PBXContainerItemProxy */;
+			target = BF7E49CB1AD668A500C0019B /* Hop Hero */;
+			targetProxy = BF7E49EB1AD668A600C0019B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BFC0C1321ACA29DC00F0002F /* Main.storyboard */ = {
+		BF7E49DE1AD668A500C0019B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BFC0C1331ACA29DC00F0002F /* Base */,
+				BF7E49DF1AD668A500C0019B /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		BFC0C1371ACA29DC00F0002F /* LaunchScreen.xib */ = {
+		BF7E49E31AD668A500C0019B /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BFC0C1381ACA29DC00F0002F /* Base */,
+				BF7E49E41AD668A500C0019B /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -273,7 +273,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BFC0C1461ACA29DC00F0002F /* Debug */ = {
+		BF7E49F21AD668A600C0019B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -314,7 +314,7 @@
 			};
 			name = Debug;
 		};
-		BFC0C1471ACA29DC00F0002F /* Release */ = {
+		BF7E49F31AD668A600C0019B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -349,7 +349,7 @@
 			};
 			name = Release;
 		};
-		BFC0C1491ACA29DC00F0002F /* Debug */ = {
+		BF7E49F51AD668A600C0019B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -359,7 +359,7 @@
 			};
 			name = Debug;
 		};
-		BFC0C14A1ACA29DC00F0002F /* Release */ = {
+		BF7E49F61AD668A600C0019B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -369,7 +369,7 @@
 			};
 			name = Release;
 		};
-		BFC0C14C1ACA29DC00F0002F /* Debug */ = {
+		BF7E49F81AD668A600C0019B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -388,7 +388,7 @@
 			};
 			name = Debug;
 		};
-		BFC0C14D1ACA29DC00F0002F /* Release */ = {
+		BF7E49F91AD668A600C0019B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -406,32 +406,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BFC0C11B1ACA29DC00F0002F /* Build configuration list for PBXProject "Hop Hero" */ = {
+		BF7E49C71AD668A500C0019B /* Build configuration list for PBXProject "Hop Hero" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BFC0C1461ACA29DC00F0002F /* Debug */,
-				BFC0C1471ACA29DC00F0002F /* Release */,
+				BF7E49F21AD668A600C0019B /* Debug */,
+				BF7E49F31AD668A600C0019B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BFC0C1481ACA29DC00F0002F /* Build configuration list for PBXNativeTarget "Hop Hero" */ = {
+		BF7E49F41AD668A600C0019B /* Build configuration list for PBXNativeTarget "Hop Hero" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BFC0C1491ACA29DC00F0002F /* Debug */,
-				BFC0C14A1ACA29DC00F0002F /* Release */,
+				BF7E49F51AD668A600C0019B /* Debug */,
+				BF7E49F61AD668A600C0019B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		BFC0C14B1ACA29DC00F0002F /* Build configuration list for PBXNativeTarget "Hop HeroTests" */ = {
+		BF7E49F71AD668A600C0019B /* Build configuration list for PBXNativeTarget "Hop HeroTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BFC0C14C1ACA29DC00F0002F /* Debug */,
-				BFC0C14D1ACA29DC00F0002F /* Release */,
+				BF7E49F81AD668A600C0019B /* Debug */,
+				BF7E49F91AD668A600C0019B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = BFC0C1181ACA29DC00F0002F /* Project object */;
+	rootObject = BF7E49C41AD668A500C0019B /* Project object */;
 }
