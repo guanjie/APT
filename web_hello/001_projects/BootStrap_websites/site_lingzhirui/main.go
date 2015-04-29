@@ -19,7 +19,7 @@ func main() {
 
 	// 网站内容在这边
 	m.Get("/eric/lingzhirui", func(r render.Render) {
-		r.HTML(200, "lingzhirui", nil)
+		r.HTML(200, "lingzhirui.html", nil)
 	})
 
 	// 算法开始
